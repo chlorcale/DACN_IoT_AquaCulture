@@ -2,9 +2,9 @@ import { useState } from "react";
 
 export default function Settings() {
   const [form, setForm] = useState({
-    name: "Nguyễn Thảo",
+    name: "Nguyễn Mai Huy Phát",
     role: "Kỹ thuật viên",
-    email: "thao.nguyen@aquapixel.vn"
+    email: "something@gmail.com"
   });
 
   const handleChange = (key) => (e) => setForm({ ...form, [key]: e.target.value });
