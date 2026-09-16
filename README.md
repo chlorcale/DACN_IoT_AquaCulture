@@ -1,5 +1,10 @@
 # AquaPixel — Hệ thống IoT giám sát chất lượng nước ao tôm
 
+[![Verify project](https://github.com/chlorcale/DACN_IoT_AquaCulture/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/chlorcale/DACN_IoT_AquaCulture/actions/workflows/ci.yml)
+[![Repository](https://img.shields.io/badge/GitHub-chlorcale%2FDACN__IoT__AquaCulture-181717?logo=github)](https://github.com/chlorcale/DACN_IoT_AquaCulture)
+
+**Repository:** [github.com/chlorcale/DACN_IoT_AquaCulture](https://github.com/chlorcale/DACN_IoT_AquaCulture) · **Default branch:** `main`
+
 Prototype đồ án cho hệ thống quan trắc chất lượng nước ao tôm theo thời gian thực. Hệ thống thu nhận pH, nhiệt độ nước và oxy hòa tan (DO); lưu dữ liệu lên server; chụp ảnh bề mặt nước theo chu kỳ để đánh giá bổ sung màu sắc/độ đục; sau đó trực quan hóa dữ liệu và cảnh báo trên web app.
 
 > Trạng thái hiện tại: gateway, cảm biến pH/nhiệt độ và relay I/O đã được mô hình hóa đúng tài liệu thiết bị. Cảm biến DO và camera là hạng mục **bắt buộc nhưng chưa chốt model**, vì vậy không được xem là phần cứng đã hoàn thiện.
@@ -95,8 +100,8 @@ Ngưỡng hiển thị hiện tại là **cấu hình mẫu của đồ án**: D
 ### 1. Clone repository
 
 ```bash
-git clone https://github.com/<your-account>/aquapixel-iot-shrimp-pond.git
-cd aquapixel-iot-shrimp-pond
+git clone https://github.com/chlorcale/DACN_IoT_AquaCulture.git
+cd DACN_IoT_AquaCulture
 ```
 
 ### 2. Chạy backend API
@@ -137,6 +142,25 @@ VITE_API_URL=https://your-api-domain.example/api
 ```
 
 API production phải dùng database thật, HTTPS, xác thực và kiểm soát quyền trước khi điều khiển relay.
+
+### Đồng bộ mã nguồn với GitHub
+
+Sau khi sửa mã nguồn, tạo commit và đẩy lên branch `main`:
+
+```bash
+git pull origin main
+git add .
+git commit -m "mo ta thay doi"
+git push origin main
+```
+
+Nếu Git trên Windows báo `detected dubious ownership`, đánh dấu đúng thư mục dự án là an toàn rồi chạy lại lệnh Git:
+
+```bash
+git config --global --add safe.directory "C:/Users/Admin/OneDrive/Desktop/ĐACN - IoT thủy sản"
+```
+
+Chỉ dùng lệnh này với thư mục dự án bạn sở hữu hoặc tin cậy. Không thêm `safe.directory` theo đường dẫn chung chung.
 
 ## API
 
