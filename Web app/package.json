@@ -1,0 +1,22 @@
+{
+  "name": "aquapixel-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "server": "node ../server/src/server.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sprites": "node scripts/build-sprites.js"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
+  }
+}

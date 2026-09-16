@@ -1,0 +1,30 @@
+{
+  "frames": [
+    {
+      "filename": "shrimp_0",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 16,
+        "h": 16
+      }
+    },
+    {
+      "filename": "waterdrop_0",
+      "frame": {
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 16
+      }
+    }
+  ],
+  "meta": {
+    "image": "ui-icons.png",
+    "size": {
+      "w": 32,
+      "h": 16
+    },
+    "frameTags": []
+  }
+}
