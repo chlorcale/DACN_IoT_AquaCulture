@@ -1,5 +1,4 @@
 import HudCard from "../components/HudCard.jsx";
-import SpriteText from "../components/SpriteText.jsx";
 
 import { getDashboard } from "../services/api.js";
 import { useApi } from "../hooks/useApi.js";
@@ -13,9 +12,7 @@ export default function Overview() {
   return (
     <section className="page">
 
-      {/* =========================================
-          HEADER
-      ========================================= */}
+      {/* HEADER */}
       <div>
         <div className="section-title">
           TỔNG QUAN AO TÔM
@@ -30,9 +27,7 @@ export default function Overview() {
         </p>
       </div>
 
-      {/* =========================================
-          BACKEND ERROR
-      ========================================= */}
+      {/* ERROR */}
       {error && (
         <div className="empty-state">
           <b>Không kết nối được backend</b>
@@ -41,9 +36,7 @@ export default function Overview() {
         </div>
       )}
 
-      {/* =========================================
-          HUD CARDS
-      ========================================= */}
+      {/* HUD CARDS */}
       <div className="hud-grid">
         {stats.map((stat) => (
           <HudCard
@@ -53,188 +46,14 @@ export default function Overview() {
         ))}
       </div>
 
-      {/* =========================================
-          TEST SPRITE TEXT
-          XÓA KHỐI NÀY SAU KHI TEST XONG
-      ========================================= */}
-      <div
-        className="panel-box pixel-corners-sm"
-        style={{
-          marginTop: "20px",
-          padding: "20px",
-        }}
-      >
-        <h3>TEST PIXEL TEXT</h3>
-
-        <div
-          style={{
-            marginTop: "15px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px",
-          }}
-        >
-
-          {/* Test số */}
-          <div>
-            <div style={{ marginBottom: "5px" }}>
-              Số:
-            </div>
-
-            <SpriteText
-              text="1234567890 29.2"
-              size={32}
-              color="#ffffff"
-            />
-          </div>
-
-          {/* Test nguyên âm có dấu */}
-          <div>
-            <div style={{ marginBottom: "5px" }}>
-              Nguyên âm:
-            </div>
-
-            <SpriteText
-              text="a á à ả ã ạ"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="ă ắ ằ ẳ ẵ ặ"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="â ấ ầ ẩ ẫ ậ"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="e é è ẻ ẽ ẹ"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="ê ế ề ể ễ ệ"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="i í ì ỉ ĩ ị"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="o ó ò ỏ õ ọ"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="ô ố ồ ổ ỗ ộ"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="ơ ớ ờ ở ỡ ợ"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="u ú ù ủ ũ ụ"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="ư ứ ừ ử ữ ự"
-              size={32}
-              color="#4ade80"
-            />
-
-            <br />
-
-            <SpriteText
-              text="y ý ỳ ỷ ỹ ỵ"
-              size={32}
-              color="#4ade80"
-            />
-          </div>
-
-          {/* Test chữ + số + đơn vị */}
-          <div>
-            <div style={{ marginBottom: "5px" }}>
-              Test thực tế:
-            </div>
-
-            <SpriteText
-              text="Nhiệt độ 29.2°C"
-              size={32}
-              color="#ffffff"
-            />
-          </div>
-
-          <div>
-            <SpriteText
-              text="DO 5.4 mg/L"
-              size={32}
-              color="#4ade80"
-            />
-          </div>
-
-          <div>
-            <SpriteText
-              text="pH 7.9"
-              size={32}
-              color="#facc15"
-            />
-          </div>
-
-        </div>
-      </div>
-
-      {/* =========================================
-          BOTTOM COLUMNS
-      ========================================= */}
+      {/* BOTTOM COLUMNS */}
       <div className="cols">
 
-        {/* ===============================
-            POND MAP
-        ================================ */}
+        {/* SƠ ĐỒ AO */}
         <div className="panel-box pixel-corners-sm">
-
           <h3>SƠ ĐỒ AO</h3>
 
           <div className="pond-view">
-
             <div className="pond-water" />
 
             <div
@@ -270,25 +89,19 @@ export default function Overview() {
             <div className="pond-caption">
               3 thiết bị · trạng thái tốt
             </div>
-
           </div>
         </div>
 
-        {/* ===============================
-            RECENT ALERTS
-        ================================ */}
+        {/* CẢNH BÁO */}
         <div className="panel-box pixel-corners-sm">
-
           <h3>CẢNH BÁO GẦN ĐÂY</h3>
 
           <div className="alert-list">
-
             {alerts.map((a, i) => (
               <div
                 key={i}
                 className={"alert-item " + a.level}
               >
-
                 <span className="alert-time">
                   {a.time}
                 </span>
@@ -296,10 +109,8 @@ export default function Overview() {
                 <span>
                   {a.text}
                 </span>
-
               </div>
             ))}
-
           </div>
         </div>
 
